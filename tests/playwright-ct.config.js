@@ -11,7 +11,8 @@ export default defineConfig({
   reporter: 'html',
   use: {
     trace: 'on-first-retry',
-    ctPort: 3100,
+    // Align CT dev server port with local Vite default (5173) so CI and local runs match
+    ctPort: 5173,
     ctViteConfig: {
       css: {
         postcss: {

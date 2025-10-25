@@ -85,13 +85,13 @@ jobs:
         working-directory: tests
         run: npx playwright install --with-deps
 
-      - name: Start frontend (Vite) on ct port
-        run: npm --prefix frontend run dev -- --port 3100 &
+      - name: Start frontend (Vite) on port 5173
+        run: npm --prefix frontend run dev -- --port 5173 &
 
-      - name: Wait for frontend (port 3100)
+      - name: Wait for frontend (port 5173)
         run: |
-          for i in $(seq 1 30); do
-            if curl -s http://localhost:3100 > /dev/null 2>&1; then
+          for i in $(seq 1 60); do
+            if curl -s http://localhost:5173 > /dev/null 2>&1; then
               echo "frontend ready"; exit 0
             fi
             sleep 1
