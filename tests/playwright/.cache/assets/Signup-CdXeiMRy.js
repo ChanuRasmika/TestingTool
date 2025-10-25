@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-CKsDzc-u.js';
-import { r as reactExports } from './index-BLqUjD2v.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-Bfbemitq.js';
+import { r as reactExports } from './index-DSzEobxj.js';
 
 function Signup({ onSignup, onSwitchToLogin }) {
   const [formData, setFormData] = reactExports.useState({
@@ -43,11 +43,11 @@ function Signup({ onSignup, onSwitchToLogin }) {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "full-name", className: "block text-sm font-medium text-gray-700 mb-2", children: "Full Name" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "name", className: "block text-sm font-medium text-gray-700 mb-2", children: "Full Name" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "input",
           {
-            id: "full-name",
+            id: "name",
             type: "text",
             required: true,
             className: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent",
@@ -78,7 +78,7 @@ function Signup({ onSignup, onSwitchToLogin }) {
             id: "password",
             type: "password",
             required: true,
-            minLength: "6",
+            minlength: "6",
             className: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent",
             value: formData.password,
             onChange: (e) => setFormData({ ...formData, password: e.target.value })
@@ -112,4 +112,4 @@ function Signup({ onSignup, onSwitchToLogin }) {
 }
 
 export { Signup as default };
-//# sourceMappingURL=Signup-BtqsjlST.js.map
+//# sourceMappingURL=Signup-CdXeiMRy.js.map

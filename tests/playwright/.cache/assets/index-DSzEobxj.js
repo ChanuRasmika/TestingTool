@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Login-RDvEGCHB.js","assets/jsx-runtime-CKsDzc-u.js","assets/Signup-BtqsjlST.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Login-BHSeMEph.js","assets/jsx-runtime-Bfbemitq.js","assets/Signup-CdXeiMRy.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -17635,10 +17635,10 @@ window.playwrightUpdate = async (rootElement, component) => {
   entry.setRenderer(() => __pwRender(component));
 };
 
-const D__TestingTool_frontend_src_components_Login_jsx = () => __vitePreload(() => import('./Login-RDvEGCHB.js'),true              ?__vite__mapDeps([0,1]):void 0).then((mod) => mod.default);
-const D__TestingTool_frontend_src_components_Signup_jsx = () => __vitePreload(() => import('./Signup-BtqsjlST.js'),true              ?__vite__mapDeps([2,1]):void 0).then((mod) => mod.default);
+const D__TestingTool_frontend_src_components_Login_jsx = () => __vitePreload(() => import('./Login-BHSeMEph.js'),true              ?__vite__mapDeps([0,1]):void 0).then((mod) => mod.default);
+const D__TestingTool_frontend_src_components_Signup_jsx = () => __vitePreload(() => import('./Signup-CdXeiMRy.js'),true              ?__vite__mapDeps([2,1]):void 0).then((mod) => mod.default);
 __pwRegistry.initialize({ D__TestingTool_frontend_src_components_Login_jsx,
   D__TestingTool_frontend_src_components_Signup_jsx });
 
 export { getDefaultExportFromCjs as g, reactExports as r };
-//# sourceMappingURL=index-BLqUjD2v.js.map
+//# sourceMappingURL=index-DSzEobxj.js.map
