@@ -1,4 +1,4 @@
-const AuthService = require('../services/AuthService');
+const AuthService = require('../Services/AuthService');
 
 class AuthController {
   static async signup(req, res) {
