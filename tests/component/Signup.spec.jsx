@@ -43,8 +43,19 @@ test('shows loading state when submitting', async ({ mount }) => {
   await component.getByLabel('Password').fill('password123');
   
   const submitButton = component.getByRole('button', { name: 'Sign Up' });
+  // Stub fetch to delay response so the loading state can be observed
+  await component.evaluate(() => {
+    // @ts-ignore - run in browser context
+    window.fetch = () => new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ ok: true, json: async () => ({ success: true, data: { token: 'fake', user: {} } }) });
+      }, 500);
+    });
+  });
+
   await submitButton.click();
-  
+
+  // The button should show the loading text while the stubbed fetch is pending
   await expect(component.getByText('Creating Account...')).toBeVisible();
 });
 
