@@ -1,0 +1,49 @@
+name: Dev Branch CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: |
+          backend/package-lock.json
+          tests/package-lock.json
+    
+    - name: Install backend dependencies
+      run: npm ci
+      working-directory: ./backend
+    
+    - name: Install test dependencies
+      run: npm ci
+      working-directory: ./tests
+    
+    - name: Install Playwright browsers
+      run: npx playwright install
+      working-directory: ./tests
+    
+    - name: Start backend server
+      run: |
+        npm start &
+        sleep 10
+      working-directory: ./backend
+    
+    - name: Run API tests
+      run: npm run test:api
+      working-directory: ./tests
+    
+    - name: Run component tests
+      run: npm run test:component
+      working-directory: ./tests
