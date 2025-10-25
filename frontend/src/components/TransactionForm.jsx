@@ -40,6 +40,7 @@ function TransactionForm({ onTransactionAdded, onClose }) {
         setError(data.error || 'Failed to create transaction');
       }
     } catch (err) {
+      console.error(err);
       setError('Network error. Please try again.');
     } finally {
       setLoading(false);

@@ -59,7 +59,8 @@ function ProfileForm({ user, onProfileUpdated, onClose }) {
       } else {
         setError(data.error || 'Failed to update profile');
       }
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       setError('Network error. Please try again.');
     } finally {
       setLoading(false);

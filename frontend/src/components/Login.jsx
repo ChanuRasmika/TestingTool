@@ -31,7 +31,8 @@ function Login({ onLogin, onSwitchToSignup }) {
       } else {
         setError(data.message);
       }
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       setError('Login failed. Please try again.');
     } finally {
       setLoading(false);
