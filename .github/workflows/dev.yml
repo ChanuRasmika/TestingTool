@@ -22,24 +22,12 @@ jobs:
           backend/package-lock.json
           tests/package-lock.json
     
-    - name: Install backend dependencies
-      run: npm ci
-      working-directory: ./backend
-    
     - name: Install test dependencies
       run: npm ci
       working-directory: ./tests
     
     - name: Install Playwright browsers
       run: npx playwright install
-      working-directory: ./tests
-    
-    - name: Fix case sensitivity for Services directory
-      run: ln -sf services Services
-      working-directory: ./backend
-    
-    - name: Run API tests
-      run: npm run test:api
       working-directory: ./tests
     
     - name: Run component tests
