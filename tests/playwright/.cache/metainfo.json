@@ -28,7 +28,7 @@
       "timestamp": 1761383366607.5596
     },
     "D:/TestingTool/frontend/src/components/Signup.jsx": {
-      "timestamp": 1761382629858.0154
+      "timestamp": 1761386726848.9805
     },
     "D:/TestingTool/frontend/src/components/Login.jsx": {
       "timestamp": 1761382623089.7715
@@ -51,14 +51,14 @@
     "D:/TestingTool/tests/node_modules/scheduler/index.js": {
       "timestamp": 1761383366606.5854
     },
+    "D:/TestingTool/tests/node_modules/scheduler/cjs/scheduler.production.js": {
+      "timestamp": 1761383367213.0605
+    },
     "D:/TestingTool/tests/node_modules/react/cjs/react-jsx-runtime.production.js": {
       "timestamp": 1761383367318.859
     },
     "D:/TestingTool/tests/node_modules/react-dom/cjs/react-dom.production.js": {
       "timestamp": 1761383368859.6155
-    },
-    "D:/TestingTool/tests/node_modules/scheduler/cjs/scheduler.production.js": {
-      "timestamp": 1761383367213.0605
     }
   },
   "deps": {
