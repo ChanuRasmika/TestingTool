@@ -1,0 +1,141 @@
+name: CI/CD - Frontend
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint & Build frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Cache frontend node modules
+        uses: actions/cache@v4
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('frontend/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Lint frontend
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
+
+  playwright-api:
+    name: Playwright - API tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install backend and test dependencies
+        run: |
+          npm --prefix backend ci
+          npm --prefix tests ci
+
+      - name: Start backend
+        run: npm --prefix backend start &
+
+      - name: Wait for backend (port 5000)
+        run: |
+          for i in $(seq 1 30); do
+            if curl -s http://localhost:5000 > /dev/null 2>&1; then
+              echo "backend ready"; exit 0
+            fi
+            sleep 1
+          done
+          echo "backend did not become ready"; exit 1
+
+      - name: Install Playwright browsers
+        working-directory: tests
+        run: npx playwright install --with-deps
+
+      - name: Run API tests
+        working-directory: tests
+        run: npm run test:api
+
+  playwright-e2e:
+    name: Playwright - E2E tests
+    runs-on: ubuntu-latest
+    needs: [build, playwright-api]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install all dependencies
+        run: |
+          npm --prefix frontend ci
+          npm --prefix backend ci
+          npm --prefix tests ci
+
+      - name: Start backend
+        run: npm --prefix backend start &
+
+      - name: Wait for backend (port 5000)
+        run: |
+          for i in $(seq 1 30); do
+            if curl -s http://localhost:5000 > /dev/null 2>&1; then
+              echo "backend ready"; exit 0
+            fi
+            sleep 1
+          done
+          echo "backend did not become ready"; exit 1
+
+      - name: Install Playwright browsers
+        working-directory: tests
+        run: npx playwright install --with-deps
+
+      - name: Run E2E tests
+        working-directory: tests
+        run: npm run test:e2e
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [build, playwright-e2e]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
+          publish_branch: gh-pages
