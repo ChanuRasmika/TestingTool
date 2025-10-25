@@ -1,0 +1,72 @@
+{
+  "version": "1.56.1",
+  "viteVersion": "6.4.1",
+  "registerSourceHash": "ea233d95b980072c81eb49458aee55f5d33fdb02",
+  "components": [
+    {
+      "id": "D__TestingTool_frontend_src_components_Login_jsx",
+      "filename": "D:\\TestingTool\\tests\\component\\Login.spec.jsx",
+      "importSource": "../../frontend/src/components/Login.jsx"
+    },
+    {
+      "id": "D__TestingTool_frontend_src_components_Signup_jsx",
+      "filename": "D:\\TestingTool\\tests\\component\\Signup.spec.jsx",
+      "importSource": "../../frontend/src/components/Signup.jsx"
+    }
+  ],
+  "sources": {
+    "D:/TestingTool/tests/playwright/index.html": {
+      "timestamp": 1761370428680.1785
+    },
+    "D:/TestingTool/tests/playwright/index.js": {
+      "timestamp": 1761370431658.576
+    },
+    "D:/TestingTool/tests/node_modules/react/index.js": {
+      "timestamp": 1761374654726.4512
+    },
+    "D:/TestingTool/tests/node_modules/react-dom/client.js": {
+      "timestamp": 1761374654655.51
+    },
+    "D:/TestingTool/frontend/src/components/Login.jsx": {
+      "timestamp": 1761372336249.377
+    },
+    "D:/TestingTool/frontend/src/components/Signup.jsx": {
+      "timestamp": 1761372335675.468
+    },
+    "D:/TestingTool/tests/node_modules/react/cjs/react.production.js": {
+      "timestamp": 1761374655526.7815
+    },
+    "D:/TestingTool/tests/node_modules/react/jsx-runtime.js": {
+      "timestamp": 1761374654864.1619
+    },
+    "D:/TestingTool/frontend/src/index.css": {
+      "timestamp": 1761117813040.901
+    },
+    "D:/TestingTool/tests/node_modules/react-dom/cjs/react-dom-client.production.js": {
+      "timestamp": 1761374655647.118
+    },
+    "D:/TestingTool/tests/node_modules/scheduler/index.js": {
+      "timestamp": 1761374654645.1538
+    },
+    "D:/TestingTool/tests/node_modules/react-dom/index.js": {
+      "timestamp": 1761374654774.3196
+    },
+    "D:/TestingTool/tests/node_modules/scheduler/cjs/scheduler.production.js": {
+      "timestamp": 1761374655092.7046
+    },
+    "D:/TestingTool/tests/node_modules/react/cjs/react-jsx-runtime.production.js": {
+      "timestamp": 1761374655436.1997
+    },
+    "D:/TestingTool/tests/node_modules/react-dom/cjs/react-dom.production.js": {
+      "timestamp": 1761374657055.5276
+    }
+  },
+  "deps": {
+    "D:\\TestingTool\\frontend\\src\\components\\Login.jsx": [
+      "D:\\TestingTool\\frontend\\src\\components\\Login.jsx"
+    ],
+    "D:\\TestingTool\\frontend\\src\\components\\Signup.jsx": [
+      "D:\\TestingTool\\frontend\\src\\components\\Signup.jsx"
+    ]
+  }
+}

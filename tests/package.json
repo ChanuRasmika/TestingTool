@@ -1,0 +1,29 @@
+{
+  "name": "tests",
+  "type": "module",
+  "scripts": {
+    "test:component": "playwright test -c playwright-ct.config.js",
+    "test:component:ui": "playwright test -c playwright-ct.config.js --ui",
+    "test:component:debug": "playwright test -c playwright-ct.config.js --debug",
+    "test:e2e": "playwright test -c playwright.config.js",
+    "test:e2e:headed": "playwright test -c playwright.config.js --headed",
+    "test:api": "playwright test -c api/api.config.js",
+    "test:api:auth": "playwright test auth.api.spec.js -c api/api.config.js",
+    "test:api:profile": "playwright test profile.api.spec.js -c api/api.config.js",
+    "test:api:network": "playwright test network.api.spec.js -c api/api.config.js",
+    "test:api:integration": "playwright test integration.api.spec.js -c api/api.config.js",
+    "test:api:debug": "playwright test -c api/api.config.js --debug",
+    "test:all": "npm run test:component && npm run test:e2e && npm run test:api",
+    "report:api": "playwright show-report playwright-report/api"
+  },
+  "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.49.1",
+    "@playwright/test": "^1.49.1",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
