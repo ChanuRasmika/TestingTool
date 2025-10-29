@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Login-BHSeMEph.js","assets/jsx-runtime-Bfbemitq.js","assets/Signup-CdXeiMRy.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Dashboard-BIb_zNO0.js","assets/jsx-runtime-FUEnZIdx.js","assets/Login-DAU0X9uD.js","assets/Signup-DhuaDZFz.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -17635,10 +17635,12 @@ window.playwrightUpdate = async (rootElement, component) => {
   entry.setRenderer(() => __pwRender(component));
 };
 
-const D__TestingTool_frontend_src_components_Login_jsx = () => __vitePreload(() => import('./Login-BHSeMEph.js'),true              ?__vite__mapDeps([0,1]):void 0).then((mod) => mod.default);
-const D__TestingTool_frontend_src_components_Signup_jsx = () => __vitePreload(() => import('./Signup-CdXeiMRy.js'),true              ?__vite__mapDeps([2,1]):void 0).then((mod) => mod.default);
-__pwRegistry.initialize({ D__TestingTool_frontend_src_components_Login_jsx,
-  D__TestingTool_frontend_src_components_Signup_jsx });
+const D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Dashboard_jsx = () => __vitePreload(() => import('./Dashboard-BIb_zNO0.js'),true              ?__vite__mapDeps([0,1]):void 0).then((mod) => mod.default);
+const D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Login_jsx = () => __vitePreload(() => import('./Login-DAU0X9uD.js'),true              ?__vite__mapDeps([2,1]):void 0).then((mod) => mod.default);
+const D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Signup_jsx = () => __vitePreload(() => import('./Signup-DhuaDZFz.js'),true              ?__vite__mapDeps([3,1]):void 0).then((mod) => mod.default);
+__pwRegistry.initialize({ D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Dashboard_jsx,
+  D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Login_jsx,
+  D__Misc_Coding_TestingTool_TestingTool_frontend_src_components_Signup_jsx });
 
 export { getDefaultExportFromCjs as g, reactExports as r };
-//# sourceMappingURL=index-DSzEobxj.js.map
+//# sourceMappingURL=index-DVhtLU_S.js.map

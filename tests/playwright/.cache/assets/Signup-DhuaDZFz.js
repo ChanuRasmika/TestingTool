@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-Bfbemitq.js';
-import { r as reactExports } from './index-DSzEobxj.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-FUEnZIdx.js';
+import { r as reactExports } from './index-DVhtLU_S.js';
 
 function Signup({ onSignup, onSwitchToLogin }) {
   const [formData, setFormData] = reactExports.useState({
@@ -112,4 +112,4 @@ function Signup({ onSignup, onSwitchToLogin }) {
 }
 
 export { Signup as default };
-//# sourceMappingURL=Signup-CdXeiMRy.js.map
+//# sourceMappingURL=Signup-DhuaDZFz.js.map
