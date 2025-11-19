@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-CirYrYFd.js';
-import './index-CtAEwszi.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-8pb9gxWL.js';
+import './index-X0j-QJCt.js';
 
 function TransactionList({ transactions }) {
   const formatAmount = (amount) => {
@@ -35,4 +35,4 @@ function TransactionList({ transactions }) {
 }
 
 export { TransactionList as default };
-//# sourceMappingURL=TransactionList-D5kLQqRF.js.map
+//# sourceMappingURL=TransactionList-CsGIMqSL.js.map

@@ -1,8 +1,8 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-CirYrYFd.js';
-import { r as reactExports } from './index-CtAEwszi.js';
-import TransactionForm from './TransactionForm-FBizvZsA.js';
-import TransactionList from './TransactionList-D5kLQqRF.js';
-import ProfileForm from './ProfileForm-JRkw5gk6.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-8pb9gxWL.js';
+import { r as reactExports } from './index-X0j-QJCt.js';
+import TransactionForm from './TransactionForm-CdaCKO8r.js';
+import TransactionList from './TransactionList-CsGIMqSL.js';
+import ProfileForm from './ProfileForm-Cm25MHfA.js';
 
 function Dashboard({ user, onLogout }) {
   const [showProfileMenu, setShowProfileMenu] = reactExports.useState(false);
@@ -227,4 +227,4 @@ function Dashboard({ user, onLogout }) {
 }
 
 export { Dashboard as default };
-//# sourceMappingURL=Dashboard-CJakxEyO.js.map
+//# sourceMappingURL=Dashboard-COXvjTF0.js.map

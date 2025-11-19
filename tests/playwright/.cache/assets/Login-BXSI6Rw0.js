@@ -1,9 +1,8 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-CirYrYFd.js';
-import { r as reactExports } from './index-CtAEwszi.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-8pb9gxWL.js';
+import { r as reactExports } from './index-X0j-QJCt.js';
 
-function Signup({ onSignup, onSwitchToLogin }) {
+function Login({ onLogin, onSwitchToSignup }) {
   const [formData, setFormData] = reactExports.useState({
-    name: "",
     email: "",
     password: ""
   });
@@ -14,7 +13,7 @@ function Signup({ onSignup, onSwitchToLogin }) {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:5000/api/signup", {
+      const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -25,13 +24,13 @@ function Signup({ onSignup, onSwitchToLogin }) {
       if (data.success) {
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("user", JSON.stringify(data.data.user));
-        onSignup(data.data.user);
+        onLogin(data.data.user);
       } else {
         setError(data.message);
       }
     } catch (error2) {
       console.error(error2);
-      setError("Signup failed. Please try again.");
+      setError("Login failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -39,23 +38,9 @@ function Signup({ onSignup, onSwitchToLogin }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md w-full bg-white rounded-lg shadow-lg p-8", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center mb-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-3xl font-bold text-gray-800", children: "QuickBank" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-600 mt-2", children: "Create your account" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-600 mt-2", children: "Sign in to your account" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "name", className: "block text-sm font-medium text-gray-700 mb-2", children: "Full Name" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "input",
-          {
-            id: "name",
-            type: "text",
-            required: true,
-            className: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent",
-            value: formData.name,
-            onChange: (e) => setFormData({ ...formData, name: e.target.value })
-          }
-        )
-      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "email", className: "block text-sm font-medium text-gray-700 mb-2", children: "Email" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -78,7 +63,6 @@ function Signup({ onSignup, onSwitchToLogin }) {
             id: "password",
             type: "password",
             required: true,
-            minlength: "6",
             className: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent",
             value: formData.password,
             onChange: (e) => setFormData({ ...formData, password: e.target.value })
@@ -92,24 +76,24 @@ function Signup({ onSignup, onSwitchToLogin }) {
           type: "submit",
           disabled: loading,
           className: "w-full bg-yellow-400 text-black font-medium py-2 px-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 disabled:opacity-50",
-          children: loading ? "Creating Account..." : "Sign Up"
+          children: loading ? "Signing in..." : "Sign In"
         }
       )
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-gray-600", children: [
-      "Already have an account?",
+      "Don't have an account?",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
         {
-          onClick: onSwitchToLogin,
+          onClick: onSwitchToSignup,
           className: "text-yellow-600 hover:text-yellow-700 font-medium",
-          children: "Sign in"
+          children: "Sign up"
         }
       )
     ] }) })
   ] }) });
 }
 
-export { Signup as default };
-//# sourceMappingURL=Signup-C5nUu0iU.js.map
+export { Login as default };
+//# sourceMappingURL=Login-BXSI6Rw0.js.map

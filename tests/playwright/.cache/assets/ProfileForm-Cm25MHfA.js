@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-CirYrYFd.js';
-import { r as reactExports } from './index-CtAEwszi.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-8pb9gxWL.js';
+import { r as reactExports } from './index-X0j-QJCt.js';
 
 function ProfileForm({ user, onProfileUpdated, onClose }) {
   const [formData, setFormData] = reactExports.useState({
@@ -139,4 +139,4 @@ function ProfileForm({ user, onProfileUpdated, onClose }) {
 }
 
 export { ProfileForm as default };
-//# sourceMappingURL=ProfileForm-JRkw5gk6.js.map
+//# sourceMappingURL=ProfileForm-Cm25MHfA.js.map
