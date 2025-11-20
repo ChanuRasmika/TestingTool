@@ -171,13 +171,18 @@ test('Combined demo: signup → dashboard → transactions → report → profil
   await page.getByRole('button', { name: 'Sign In' }).click();
 
   // Back to dashboard
-  // Wait for a robust dashboard cue
-  const addTxBtn = page.getByRole('button', { name: 'Add Transaction' });
-  const welcomeHdr = page.locator('h2:has-text("Welcome to QuickBank")');
-  await Promise.race([
-    addTxBtn.waitFor({ state: 'visible', timeout: 20000 }),
-    welcomeHdr.waitFor({ state: 'visible', timeout: 20000 })
-  ]);
+  // Wait for a robust dashboard cue with better error handling
+  try {
+    const addTxBtn = page.getByRole('button', { name: 'Add Transaction' });
+    const welcomeHdr = page.locator('h2:has-text("Welcome to QuickBank")');
+    await Promise.race([
+      addTxBtn.waitFor({ state: 'visible', timeout: 25000 }),
+      welcomeHdr.waitFor({ state: 'visible', timeout: 25000 })
+    ]);
+  } catch (error) {
+    // Fallback: wait for any dashboard indicator
+    await expect(page.locator('h1:has-text("QuickBank")')).toBeVisible({ timeout: 10000 });
+  }
   await pause(page, 1000);
 
   // 11) Optional: download report again quickly

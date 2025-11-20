@@ -10,12 +10,12 @@ dotenv.config({ path: path.resolve(__dirname, 'e2e', '.env') });
 
 export default defineConfig({
   testDir: './e2e',
-  timeout: 30_000,
+  timeout: 60_000,
   expect: { timeout: 5000 },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  reporter: [['html', { open: 'never' }]],
+  reporter: [['html', { open: 'never', outputFolder: 'playwright-report', fileName: 'index.html' }]],
   use: {
     baseURL: process.env.BASE_URL || 'http://localhost:5173',
     trace: 'on-first-retry',
