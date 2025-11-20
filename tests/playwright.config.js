@@ -22,8 +22,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  // Ensure the frontend dev server is available before running tests.
-  webServer: {
+  // Only start webServer locally, not in CI
+  webServer: process.env.CI ? undefined : {
     command: 'npm --prefix ../frontend run dev -- --port 5173',
     url: 'http://localhost:5173',
     reuseExistingServer: true,
