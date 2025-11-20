@@ -38,21 +38,18 @@ jobs:
       run: npx playwright install
       working-directory: ./tests
     
-    - name: Install frontend dependencies
-      run: npm ci
-      working-directory: ./frontend
-    
-    - name: Build frontend
-      run: npm run build
-      working-directory: ./frontend
+    - name: Run Playwright tests
+      run: npx playwright test --reporter=html
+      working-directory: ./tests
+      continue-on-error: true
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
     
-    - name: Upload artifact
+    - name: Upload test report
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './frontend/dist'
+        path: './tests/playwright-report'
     
     - name: Deploy to GitHub Pages
       id: deployment
