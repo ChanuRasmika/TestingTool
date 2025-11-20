@@ -1,4 +1,4 @@
-## TestingTool
+## TestingTool - Quick Bank
 
 A simple full-stack testing/demo application (Node/Express backend + React/Vite frontend) with Playwright tests. This repository contains a MySQL-backed backend that exposes REST endpoints, a Vite+React frontend, and Playwright-based component/API/e2e tests.
 
